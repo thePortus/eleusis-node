@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<div layout="column" layout-fill>
+    <md-card layout="column" ng-cloak>
+        <md-card-header>
+            <md-card-header-text layout="column" layout-align="start start">
+                <span class="md-headline">Project Bibliography</span>
+                <span class="md-subhead"><i>Historical and Theoretical</i></span>
+            </md-card-header-text>
+        </md-card-header>
+        <md-card-content layout="column" layout-align="start start" layout-fill>
+            <ul>
+                <li ng-repeat="source in vm.sources" ng-click="null">
+                    <small><code>{{ source }}</code></small>
+                    <md-divider></md-divider>
+                </li>
+            </ul>
+        </md-card-content>
+    </md-card>
+</div>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<div layout="column" layout-align="start center" layout-padding layout-fill flex>
+    <md-toolbar class="md-accent md-toolbar-tools md-whiteframe-8dp" layout="row" layout-align="left center" ng-cloak>
+        <div flex>
+            <div ng-if="vm.currentNetwork === null">
+                Load Network
+            </div>
+            <div ng-if="vm.currentNetwork != null">
+                {{ vm.currentNetworkLabel }}
+            </div>
+        </div>
+        <div layout="column" layout-align="center center">
+            <md-menu>
+                <md-button aria-label="Open network menu" class="md-raised md-primary" ng-mouseenter="vm.openMenu($mdMenu, $event)">
+                    Select
+                </md-button>
+                <md-menu-content ng-mouseleave="$mdMenu.close()" md-menu-align-target layout-padding>
+                    <md-menu-item ng-repeat="menuItem in vm.menuItems">
+                        <md-button ng-click="vm.changeNetwork(menuItem['value'])">{{ menuItem['label'] }}</md-button>
+                    </md-menu-item>
+            </md-menu>
+        </div>
+    </md-toolbar>
+    <md-content class="md-whiteframe-8dp" layout="column" layout-fill flex>
+
+        <div ng-if="vm.currentNetwork === null">
+          <p>
+            This site contains different network graphs emphasizing the connections that bind people displayed in stone. The sanctuary is full of inscriptions and statues bought and paid for by one individual (or institution) in honor of another individual. Individually, these seem like one-offs, but viewed in sum they demonstrate an immense network of reciprocity that bound the elites of Roman Athens together. In these graphs, individuals (or institutions) appear connected through some kind of interaction recorded on the stone. The more interactions, the more tightly they are bound.</p>
+          <p>
+            Currently, there are three different graphs. (1) Benefaction: Sponsors and Honors - Tracks the most direct and meaningful connections. The only people are institutions in this graph are those that either sponsored and inscription or had an inscription sponsored in honor of them. Thus, a link in this charge reflects not only a claimed social link, but a direct financial connection as well. (2) Sponsors and Those on Their Inscriptions - This chart casts a wider net for connections, but connections that may be more lose and indirect. In this chart connections are drawn between those who paid for inscriptions and everyone who appeared on the inscription (even if not an honorand). (3) Entities Coappearing in Inscriptions - The widest and loosest net, but one that tracks patterns of social associations over time. This chart links together anyone (or institution) who appears on the same inscription together. As with the other network graphs, every item is clickable and will take you to its corresponding individual page, so use this to explore!
+          </p>
+        </div>
+
+        <eleusis-network-graph ng-if="vm.currentNetwork === 'sponsor_to_honorand'" datafunction="vm.networks.sponsorToHonorand" options="vm.networks.options['sponsor_to_honorand']" layout-fill flex></eleusis-network-graph>
+
+        <eleusis-network-graph ng-if="vm.currentNetwork === 'sponsor_to_person'" datafunction="vm.networks.sponsorToPerson" options="vm.networks.options['sponsor_to_person']" layout-fill flex></eleusis-network-graph>
+
+        <eleusis-network-graph ng-if="vm.currentNetwork === 'coappearance'" datafunction="vm.networks.coappearance" options="vm.networks.options['coappearance']" layout-fill flex></eleusis-network-graph>
+
+    </md-content>
+    <!--
+    <div layout="row" layout-align="center center">
+        <md-menu>
+            <md-button class="md-accent md-raised" aria-label="Select network to view" ng-mouseenter="vm.openMenu($mdMenu, $event)" flex>
+                <span md-menu-origin>Choose Network</span>
+            </md-button>
+            <md-menu-content ng-mouseleave="$mdMenu.close()" md-menu-align-target layout-padding>
+                <md-menu-item ng-repeat="menuItem in vm.menuItems">
+                    <span ng-click="vm.changeNetwork(menuItem['value'])">{{ menuItem['label'] }}</span>
+                </md-menu-item>
+        </md-menu>
+    </div>
+    <div ng-if="vm.currentNetwork === 'None'">
+        (Please wait, it will take awhile to build network)
+    </div>
+    <div ng-if="vm.currentNetwork != 'None'" layout-fill flex>
+        <div ng-if="vm.currentNetwork === 'sponsor_to_honorand'">
+            <eleusis-header content="'Inscriptions: Sponsors to Honorands'" style="'md-accent'"></eleusis-header>
+            <md-content class="window-content">
+                <eleusis-network-graph datafunction="vm.networks.sponsorToHonorand" options="vm.networks.options['sponsor_to_honorand']" flex></eleusis-network-graph>
+            </md-content>
+        </div>
+        <div ng-if="vm.currentNetwork === 'sponsor_to_person'">
+            <eleusis-header content="'Inscriptions: Sponsors to People on their Inscriptions'" style="'md-accent'"></eleusis-header>
+            <md-content class="window-content">
+                <eleusis-network-graph datafunction="vm.networks.sponsorToPerson" options="vm.networks.options['sponsor_to_person']" flex></eleusis-network-graph>
+            </md-content>
+        </div>
+        <div ng-if="vm.currentNetwork === 'coappearance'">
+            <eleusis-header content="'Inscriptions: People Coappearing'" style="'md-accent'"></eleusis-header>
+            <md-content class="window-content">
+                <eleusis-network-graph datafunction="vm.networks.coappearance" options="vm.networks.options['coappearance']" flex></eleusis-network-graph>
+            </md-content>
+        </div>
+    </div>
+    -->
+</div>

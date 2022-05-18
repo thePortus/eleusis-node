@@ -1,0 +1,116 @@
+/* common module */
+a {
+  color: #b9502e;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+a:visited {
+  color: #b9502e;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+a:active {
+  color: #b9502e;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #2196f3;
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+ul {
+    list_style_type: none;
+    padding-left: 10px;
+}
+
+/* miscellaneous common classes */
+.scroll-y {
+  overflow-y: scroll;
+}
+
+.float-left {
+  float: left;
+}
+
+.float-right {
+  float: right;
+}
+
+.margins-10px {
+  margin: 10px;
+}
+
+.height-100 {
+  height: 100%;
+}
+
+.width-100 {
+  width: 100%;
+}
+
+.auto-center {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.word-wrap-break {
+  word-wrap: break-word;
+}
+
+.hanging-indent {
+  padding-left: 1.5em;
+  text-indent:-1.5em;
+}
+
+/* borders */
+
+.border {
+  margin: 0px;
+  padding: 0px;
+  border-width: 1px;
+  border-style: solid;
+  border-color: #000000;
+}
+
+.border-widget {
+  border-color: #d6c9c1;
+}
+
+.border-img {
+  margin: 15px;
+}
+
+
+/* codequoting */
+.codequote {
+  background-color: #D0E4EC;
+  color: #222222;
+  padding: 10px;
+  margin: 10px;
+  border-radius: 5px;
+  border-width: 1px;
+  border-color: #000C11;
+  border-style: solid;
+}
+.codequote a:link, .codequote a:active, .codequote a:visited {
+  color: #823a14;
+}
+.codequote a:hover {
+  color: #f16412;
+}
+
+/* item browser tables & lists */
+.eleusis-browser-table {
+  height: 100%;
+}
+md-list.eleusis-browser-list {
+  height: 100%;
+}
+md-list.eleusis-browser-list > md-list-item:nth-child(even) {
+  background: rgba(19, 0, 151, 0.06);
+}

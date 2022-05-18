@@ -1,0 +1,42 @@
+<div layout-fill>
+    <md-toolbar class="md-primary md-hue-2 md-toolbar-tools md-whiteframe-8dp" layout="row" layout-align="left center" ng-cloak>
+        <div layout="row" layout-align="center center" flex>
+            <div layout="column" layout-align="center start" ng-click="vm.go('home')" flex>
+                <div>
+                    <div>
+                        <h3><b>{{ vm.app_title }}:</b></h3>
+                    </div>
+                    <div class="app-credits">
+                        <small>{{ vm.app_credits }}, {{ vm.app_rights }}</small>
+                    </div>
+                </div>
+            </div>
+            <div hide-xs hide-sm hide-md layout="column" layout-align="start start" flex>
+                <div layout="row" layout-align="start center" flex>
+                    <md-button>
+                        <a href="https://thePort.us">thePort.us</a>
+                    </md-button>
+                </div>
+            </div>
+            <div>
+                <!-- Use row of buttons for larger displays -->
+                <div hide show-gt-sm layout="row" layout-align="center center">
+                    <div ng-repeat="menuItem in vm.menuItems">
+                        <md-button aria-label="Navigate {{menuItem['label']}}" ng-click="vm.go(menuItem['value'])"><small>{{ menuItem['label'] }}</small></md-button>
+                    </div>
+                </div>
+                <!-- Use dropdown menu for small/mobile displays -->
+                <md-menu hide show-sm show-xs>
+                    <md-button aria-label="Open navigation menu" class="md-icon-button" ng-mouseenter="vm.openMenu($mdMenu, $event)">
+                        <md-icon md-menu-origin md-svg-icon="menu"></md-icon>
+                    </md-button>
+                    <md-menu-content class="md-dense" ng-mouseleave="$mdMenu.close()" md-menu-align-target>
+                        <md-menu-item ng-repeat="menuItem in vm.menuItems">
+                            <span ng-click="vm.go(menuItem['value'])">{{ menuItem['label'] }}</span>
+                        </md-menu-item>
+                    </md-menu-content>
+                </md-menu>
+            </div>
+        </div>
+    </md-toolbar>
+</div>

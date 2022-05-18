@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<div layout-padding ng-cloak>
+    <md-toolbar ng-click="vm.open = !vm.open" class="md-toolbar-tools md-hue-1" ng-class="{'md-accent': vm.open === false, 'md-primary': vm.open === true}">
+        <div layout="row" layout-align="start center" flex>
+            <div flex>{{ vm.options['title'] }} <small>({{ vm.data.length }})</small></div>
+            <md-icon ng-show="vm.open === true" md-svg-icon="menu-up"></md-icon>
+            <md-icon ng-show="vm.open === false" md-svg-icon="menu-down"></md-icon>
+        </div>
+    </md-toolbar>
+    <md-list ng-show="vm.open" class="eleusis-browser-list">
+        <md-list-item class="md-2-line" ng-repeat="item in vm.data" ng-click="vm.go(vm.options.gotoType, item['ID'])">
+            <div aria-label="Go to related item" layout-margin>
+                <h3>{{ item[vm.options.idField] }}<h3>
+            </div>
+            <div class="md-list-item-text">
+                <h3>{{ item[vm.options.nameField] }}<h3>
+                <p>
+                    <span ng-repeat="field in vm.options.otherFields">
+                        <span>{{ item[field] }}</span>
+                        <span ng-if="!$last && item[field]"> | </span>
+                    </span>
+                </p>
+            </div>
+            <md-divider ng-if="!$last"></md-divider>
+        </md-list-item>
+    </md-list>
+</div>

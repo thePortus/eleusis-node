@@ -1,0 +1,17 @@
+/* app module */
+
+body {
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  height: 100vh;
+}
+
+.window-content {
+  /* Ensure main content browsing window is height of viewport minus header */
+  height: -o-calc(100vh - 200px); /* opera */
+  height: -webkit-calc(100vh - 200px); /* google, safari */
+  height: -moz-calc(100vh - 200px); /* firefox */
+}
+
+.app-credits {
+    font-size: 50%;
+}

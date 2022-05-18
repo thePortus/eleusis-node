@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<div layout="column" layout-fill>
+    <md-card layout="column" ng-cloak>
+        <md-card-header>
+            <md-card-header-text layout="column" layout-align="start start">
+                <span class="md-headline">Project Specifications</span>
+                <span class="md-subhead"><i>Technical Information</i></span>
+            </md-card-header-text>
+        </md-card-header>
+        <md-card-content layout="column" layout-align="start start" layout-fill>
+          <div>
+            <div ng-repeat="spec in vm.specs">
+              <span><strong>{{ spec.label }}</strong>:</span><span><a href="{{ spec.link }}">{{ spec.value }}</a></span>
+            </div>
+          </div>
+        </md-card-content>
+    </md-card>
+    <md-card layout="column" ng-cloak>
+        <md-card-header>
+            <md-card-header-text layout="column" layout-align="start start">
+                <span class="md-headline">Repositories</span>
+                <span class="md-subhead"><i>Code & Data</i></span>
+            </md-card-header-text>
+        </md-card-header>
+        <md-card-content layout="column" layout-align="start start" layout-fill>
+          <div>
+            <div><span><strong>Code Repository</strong>:</span><span><a href="https://github.com/thePortus/eleusis-node">GitHub</a></span></div>
+            <div><span><strong>Data Repository</strong>:</span><span><a href="https://github.com/thePortus/eleusis-data">GitHub</a></span></div>
+          </div>
+        </md-card-content>
+    </md-card>
+    <md-card layout="column" ng-cloak>
+        <md-card-header>
+            <md-card-header-text layout="column" layout-align="start start">
+                <span class="md-headline">Project Modules</span>
+                <span class="md-subhead"><i>Dependencies from npm</i></span>
+            </md-card-header-text>
+        </md-card-header>
+        <md-card-content layout="column" layout-align="start start" layout-fill>
+            <div>
+              <h3>Frontend:</h3>
+              <ul>
+                <li ng-repeat="dependency in vm.dependencies['frontend']">
+                  <a href="{{ dependency.link }}">{{ dependency.label }}</a>
+                </li>
+              </ul>
+            </div>
+            <div>
+              <h3>Backend:</h3>
+              <ul>
+                <li ng-repeat="dependency in vm.dependencies['backend']">
+                  <a href="{{ dependency.link }}">{{ dependency.label }}</a>
+                </li>
+              </ul>
+            </div>
+            <div>
+              <h3>Developer:</h3>
+              <ul>
+                <li ng-repeat="dependency in vm.dependencies['developer']">
+                  <a href="{{ dependency.link }}">{{ dependency.label }}</a>
+                </li>
+              </ul>
+            </div>
+        </md-card-content>
+    </md-card>
+    <md-card layout="column" ng-cloak>
+        <md-card-header>
+            <md-card-header-text layout="column" layout-align="start start">
+                <span class="md-headline">Database Schema</span>
+                <span class="md-subhead"><i>Entity Relationship Diagram</i></span>
+            </md-card-header-text>
+        </md-card-header>
+        <md-card-content layout="column" layout-align="start start" layout-fill>
+          <span><a href="{{ vm.erd['erd'] }}">Download the ERD here</a></span>
+          <img hide-xs hide-sm ng-src="{{ vm.erd['img'] }}" class="md-card-image border border-img float-right" alt="ERD of Eleusis Database">
+          <span><a href="{{ vm.erd['erd'] }}">Download the ERD here</a></span>
+        </md-card-content>
+    </md-card>
+</div>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html ng-app="eleusis.app">
+    <head>
+        <title>The Networks of Roman Eleusis</title>
+        <meta name="viewport" content="width=device-width", initial-scale=1.0 />
+        <!-- CSS External Dependencies -->
+        <link rel="stylesheet" href="/external/angular-material/angular-material.css">
+        <link rel="stylesheet" href="/external/angular-ui-grid/ui-grid.min.css">
+        <script type="text/javascript" src="/external/vis/dist/vis.css"></script>
+        <!-- Custom CSS Assets -->
+        <link rel="stylesheet" href="/css/app.css">
+        <link rel="stylesheet" href="/css/common.css">
+        <link rel="stylesheet" href="/css/details.css">
+        <link rel="stylesheet" href="/css/graphs.css">
+        <link rel="stylesheet" href="/css/networks.css">
+    </head>
+    <body ng-controller="mainController as vm" layout-fill>
+        <div layout="column" layout-fill>
+                <eleusis-site-header></eleusis-site-header>
+                <div ui-view flex layout-fill></ui-view>
+        </div>
+        <!-- JS Dependencies -->
+        <script type="text/javascript" src="/external/angular/angular.min.js"></script>
+        <script type="text/javascript" src="/external/@uirouter/angularjs/release/angular-ui-router.min.js"></script>
+        <script type="text/javascript" src="/external/angular-animate/angular-animate.min.js"></script>
+        <script type="text/javascript" src="/external/angular-aria/angular-aria.min.js"></script>
+        <script type="text/javascript" src="/external/angular-material/angular-material.min.js"></script>
+        <script type="text/javascript" src="/external/angular-ui-grid/ui-grid.min.js"></script>
+        <script type="text/javascript" src="/external/vis/dist/vis.js"></script>
+        <!-- App Files -->
+        <!-- Module Config Files -->
+        <script type="text/javascript" src="/js/common/common.config.js"></script>
+        <script type="text/javascript" src="/js/details/details.config.js"></script>
+        <script type="text/javascript" src="/js/graphs/graphs.config.js"></script>
+        <script type="text/javascript" src="/js/inscriptions/inscriptions.config.js"></script>
+        <script type="text/javascript" src="/js/institutions/institutions.config.js"></script>
+        <script type="text/javascript" src="/js/people/people.config.js"></script>
+        <script type="text/javascript" src="/js/honors/honors.config.js"></script>
+        <script type="text/javascript" src="/js/networks/networks.config.js"></script>
+        <script type="text/javascript" src="/js/app/app.config.js"></script>
+        <!-- Factory Files -->
+        <script type="text/javascript" src="/js/app/bibliography.factory.js"></script>
+        <script type="text/javascript" src="/js/common/interface.factory.js"></script>
+        <script type="text/javascript" src="/js/common/api.factory.js"></script>
+        <script type="text/javascript" src="/js/common/stats.factory.js"></script>
+        <script type="text/javascript" src="/js/details/details.factory.js"></script>
+        <script type="text/javascript" src="/js/inscriptions/inscriptions.factory.js"></script>
+        <script type="text/javascript" src="/js/institutions/institutions.factory.js"></script>
+        <script type="text/javascript" src="/js/people/people.factory.js"></script>
+        <script type="text/javascript" src="/js/honors/honors.factory.js"></script>
+        <script type="text/javascript" src="/js/networks/networks.factory.js"></script>
+        <!-- Controller Files -->
+        <script type="text/javascript" src="/js/app/main.controller.js"></script>
+        <script type="text/javascript" src="/js/app/home.controller.js"></script>
+        <script type="text/javascript" src="/js/inscriptions/list.controller.js"></script>
+        <script type="text/javascript" src="/js/inscriptions/details.controller.js"></script>
+        <script type="text/javascript" src="/js/institutions/list.controller.js"></script>
+        <script type="text/javascript" src="/js/institutions/details.controller.js"></script>
+        <script type="text/javascript" src="/js/people/list.controller.js"></script>
+        <script type="text/javascript" src="/js/people/details.controller.js"></script>
+        <script type="text/javascript" src="/js/honors/list.controller.js"></script>
+        <script type="text/javascript" src="/js/honors/details.controller.js"></script>
+        <script type="text/javascript" src="/js/networks/networks.controller.js"></script>
+        <!-- Directive Files -->
+        <script type="text/javascript" src="/js/app/header.directive.js"></script>
+        <script type="text/javascript" src="/js/app/intro.directive.js"></script>
+        <script type="text/javascript" src="/js/app/specs.directive.js"></script>
+        <script type="text/javascript" src="/js/app/about.directive.js"></script>
+        <script type="text/javascript" src="/js/app/bibliography.directive.js"></script>
+        <script type="text/javascript" src="/js/common/header.directive.js"></script>
+        <script type="text/javascript" src="/js/common/quickTable.directive.js"></script>
+        <script type="text/javascript" src="/js/details/details.directive.js"></script>
+        <script type="text/javascript" src="/js/graphs/network.directive.js"></script>
+    </body>
+</html>

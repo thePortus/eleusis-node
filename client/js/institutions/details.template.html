@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<div layout-xs="column" layout-sm="column" layout-gt-sm="row" layout-fill>
+    <div layout="column" layout-padding>
+        <md-button class="md-accent md-raised" ng-click="vm.back()" layout-fill>
+            <md-icon hide-xs hide-sm show-gt-sm md-svg-icon="chevron-left"></md-icon>
+            <md-icon show-xs show-sm hide-gt-sm md-svg-icon="chevron-up"></md-icon>
+        </md-button>
+    </div>
+    <!-- details panel -->
+    <div layout="column" ng-show="vm.show['details']" layout-padding flex>
+        <md-toolbar class="md-toolbar-tools md-accent md-hue-3 md-whiteframe-8dp">
+            <span flex>Details</span>
+            <md-button class="md-accent md-icon-button md-toolbar-tools" ng-click="vm.setFocus('details')">
+                <md-icon ng-show="vm.show.focus !== 'details'" md-svg-icon="flip-to-front"></md-icon>
+                <md-icon ng-show="vm.show.focus === 'details'" md-svg-icon="flip-to-back"></md-icon>
+            </md-button>
+        </md-toolbar>
+        <md-content class="border border-widget">
+            <eleusis-details parameters="vm.parameters" datafactory="vm.details_table" flex></eleusis-details>
+            <eleusis-quick-table ng-if="vm.relatedData.honors.length > 0" data="vm.relatedData.honors" options="vm.relatedOptions.honors"></eleusis-quick-table>
+            <eleusis-quick-table ng-if="vm.relatedData.people.length > 0" data="vm.relatedData.people" options="vm.relatedOptions.people"></eleusis-quick-table>
+            <eleusis-quick-table ng-if="vm.relatedData.inscriptions.length > 0" data="vm.relatedData.inscriptions" options="vm.relatedOptions.inscriptions"></eleusis-quick-table>
+        </md-content>
+    </div>
+    <!-- network panel -->
+    <div hide-xs hide-sm show-gt-sm ng-show="vm.show['network']" layout="column" layout-padding flex>
+        <md-toolbar class="md-toolbar-tools md-accent md-hue-3 md-whiteframe-8dp">
+            <span flex>Related Network</span>
+            <md-button class="md-accent md-icon-button md-toolbar-tools" ng-click="vm.setFocus('network')">
+                <md-icon ng-show="vm.show.focus !== 'network'" md-svg-icon="flip-to-front"></md-icon>
+                <md-icon ng-show="vm.show.focus === 'network'" md-svg-icon="flip-to-back"></md-icon>
+            </md-button>
+        </md-toolbar>
+        <eleusis-network-graph class="border border-widget" datafunction="vm.networkfactory.networkGraph" options="vm.networkfactory.options" flex></eleusis-network-graph>
+    </div>
+</div>

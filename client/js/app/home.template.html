@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<div flex=100 layout="column">
+    <md-tabs class="scroll-y" md-stretch-tabs="always" md-border-bottom md-dynamic-height layout-fill flex>
+
+        <!-- start tab 1 -->
+        <md-tab label="Introduction" md-on-select="vm.select('intro')">
+            <eleusis-intro ng-if="vm.selected === 'intro'"></eleusis-intro>
+        </md-tab>
+
+        <!-- start tab 2 -->
+        <md-tab label="About the Author" md-on-select="vm.select('about')">
+            <eleusis-about ng-if="vm.selected === 'about'"></eleusis-about>
+        </md-tab>
+
+        <!-- start tab 3 -->
+        <md-tab label="Tech Specs" md-on-select="vm.select('specs')">
+            <eleusis-specs ng-if="vm.selected === 'specs'"></eleusis-specs>
+        </md-tab>
+
+        <!-- start tab 4 -->
+        <md-tab label="Bibliography" md-on-select="vm.select('bibliography')">
+            <eleusis-bibliography ng-if="vm.selected === 'bibliography'"></eleusis-bibliography>
+        </md-tab>
+
+    </md-tabs>
+</div>

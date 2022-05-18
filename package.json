@@ -1,0 +1,46 @@
+{
+  "name": "eleusis-node",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "start": "supervisor ./bin/www",
+    "test": "karma start",
+    "cover": "istanbul cover ./node_modules/.bin/_mocha"
+  },
+  "dependencies": {
+    "@uirouter/angularjs": "^1.0.22",
+    "angular": "^1.7.8",
+    "angular-animate": "^1.7.8",
+    "angular-aria": "^1.7.8",
+    "angular-material": "^1.1.19",
+    "angular-messages": "^1.7.8",
+    "angular-ui-grid": "^4.8.1",
+    "assetmanager": "^1.2.3",
+    "body-parser": "^1.19.0",
+    "cookie-parser": "^1.4.4",
+    "csvjson": "^4.3.4",
+    "debug": "^4.1.1",
+    "express": "^4.17.1",
+    "gulp": "^4.0.2",
+    "morgan": "^1.9.1",
+    "pg": "^8.7.1",
+    "pg-hstore": "^2.3.3",
+    "sequelize": "^5.10.0",
+    "sequelize-auto": "^0.4.29",
+    "sequelize-cli": "^5.5.0",
+    "serve-favicon": "^2.5.0",
+    "supervisor": "^0.12.0",
+    "vis": "^4.21.0"
+  },
+  "devDependencies": {
+    "angular-mocks": "^1.7.8",
+    "jasmine-core": "^2.99.1",
+    "karma": "^4.1.0",
+    "karma-chrome-launcher": "^2.2.0",
+    "karma-jasmine": "^1.1.2",
+    "lru-cache": "^4.1.5",
+    "process-nextick-args": "^1.0.7",
+    "sigmund": "^1.0.1",
+    "util-deprecate": "^1.0.2"
+  }
+}

@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<div hide-xs show-gt-xs ui-grid="vm.grid" ui-grid-pagination class="eleusis-browser-table" ui-grid-resize-columns flex></div>
+<md-list hide-gt-xs show-xs class="eleusis-browser-list">
+    <md-list-item class="md-2-line" ng-repeat="item in vm.grid.data" ng-click="vm.details(item['ID'])">
+        <div aria-label="Go to Person" layout-margin>
+            <h3>{{ item['ID'] }}<h3>
+        </div>
+        <div class="md-list-item-text">
+            <h3>{{ item['Person'] }}<h3>
+            <p>{{ item['Gender'] }} <span ng-if="item['Status'] != null">|</span> {{ item['Status'] }} <span ng-if="item['Family'] != null">|</span> {{ item['Family'] }}</p>
+        </div>
+        <md-divider ng-if="!$last"></md-divider>
+    </md-list-item>
+</md-list>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<div layout-padding>
+    <md-list flex ng-cloak>
+        <md-list-item class="md-2-line" ng-repeat="field in vm.fields" ng-if="vm.details.data[0][field.value]" ng-click="" aria-label="Detailed information field for record">
+            <div class="md-list-item-text">
+                <h3>{{ field.label }}</h3>
+                <md-content>
+                    <p ng-if="field.label !== 'Text'">{{ vm.details.data[0][field.value] }}</p>
+                    <pre ng-if="field.label === 'Text'">{{ vm.details.data[0][field.value] }}</pre>
+                    <!-- old code for trying to add line numbers in margins, not working
+                    <p ng-if="field.label !== 'Text'">{{ vm.details.data[0][field.value] }}</p>
+                    <table ng-if="field.label === 'Text'" layout="column" layout-align="start start">
+                        <tbody>
+                            <tr ng-repeat="textLine in vm.parseText(vm.details.data[0][field.value])">
+                                <td>
+                                    {{ textLine.number }}
+                                </td>
+                                <td>
+                                    {{ textLine.text }}
+                                </td>
+                            </tr>
+
+                        </tbody>
+                    </table>
+                    -->
+                </md-content>
+            </div>
+            <md-divider ng-if="!$last"></md-divider>
+        </md-list-item>
+    </md-list>
+</div>
