@@ -130,6 +130,8 @@
         </md-card-header-text>
       </md-card-header>
       <md-card-content layout="column" layout-align="start center">
+        <div>
+          <img hide-xs hide-sm ng-src="{{ vm.imgs['help1'] }}" class="md-card-image border border-img float-right" alt="Example of browse table">
         <p>
           Note that this website was primarily intended to aid researchers in the field of Roman Athens, and so does not contain extensive explanatory background aimed at non-specialists. For that reason and others, no translations for the inscriptions are available at this time.
         </p>
@@ -139,18 +141,23 @@
         <p>
           This will take you to a general table to browse and search all corresponding entities. Note: if you are viewing this site on mobile, your experience in streamlined and you do not have access to search features. Above each field in the table you will find search fields where you can enter any criteria you desire. You will also find a drop-down menu indicated by downward caret (v) that lets you sort columns either ascending, descending, or hide the column all together if you wish. At the very bottom of the page you can find buttons to page forward and backward through the data, as well as change the number of items displayed on a single page.
         </p>
-        <img hide-xs hide-sm ng-src="{{ vm.imgs['help1'] }}" class="md-card-image border border-img float-right" alt="Example of browse table">
+
+      </div>
+      <div>
+        <img hide-xs hide-sm ng-src="{{ vm.imgs['help2'] }}" class="md-card-image border border-img float-left" alt="Example of a details page">
         <p>
           Once you click on any given entry, be it an inscription, person, et c. you will be taken to the individual item's page. In the individual view, there are three compnents split into two frames. On the left side frame you will find the first two components (1) any information and metadata relating to the individual entry you selected and below that (2) drop-down lists of information and links to any related entries. For example, if you are viewing an inscriptions, this includes people who appeared on the inscription among other things. If you click on any related entry, you will immediately be taken to the corresponding page. On the right side frame, you will find a network graph. Slightly different than the true 'Network' section, this is just another handy way of viewing all relateded entities. Much like the lists, you can click on any item in the network graph and be taken to the correct page. Note: if you are viewing this site on mobile, again your experience is streamlined here, and you won't have access the network graph.
         </p>
-        <img hide-xs hide-sm ng-src="{{ vm.imgs['help2'] }}" class="md-card-image border border-img float-right" alt="Example of a details page">
+      </div>
+      <div>
+        <img hide-xs hide-sm ng-src="{{ vm.imgs['help3'] }}" class="md-card-image border border-img float-right" alt="Example of a network graph">
         <p>
           Much of the core of my reseach, however, is about connectivity. And to view large scale trends and the connections that flow indirectly between people, inscriptions, and the claims they make, we need network graphs. This site contains different network graphs emphasizing the connections that bind people displayed in stone. The sanctuary is full of inscriptions and statues bought and paid for by one individual (or institution) in honor of another individual. Individually, these seem like one-offs, but viewed in sum they demonstrate an immense network of reciprocity that bound the elites of Roman Athens together. In these graphs, individuals (or institutions) appear connected through some kind of interaction recorded on the stone. The more interactions, the more tightly they are bound.
         </p>
         <p>
           Currently, there are three different graphs. (1) Benefaction: Sponsors and Honors - Tracks the most direct and meaningful connections. The only people are institutions in this graph are those that either sponsored and inscription or had an inscription sponsored in honor of them. Thus, a link in this charge reflects not only a claimed social link, but a direct financial connection as well. (2) Sponsors and Those on Their Inscriptions - This chart casts a wider net for connections, but connections that may be more lose and indirect. In this chart connections are drawn between those who paid for inscriptions and everyone who appeared on the inscription (even if not an honorand). (3) Entities Coappearing in Inscriptions - The widest and loosest net, but one that tracks patterns of social associations over time. This chart links together anyone (or institution) who appears on the same inscription together. As with the other network graphs, every item is clickable and will take you to its corresponding individual page, so use this to explore!
         </p>
-      <img hide-xs hide-sm ng-src="{{ vm.imgs['help3'] }}" class="md-card-image border border-img float-right" alt="Example of a network graph">
+      </div>
       </md-card-content>
     </md-card>
 
